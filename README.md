@@ -1,5 +1,9 @@
 # COMP6080
 
+## Exercises
+
+- All tutorial exercises from the term including HTML, CSS, JS, Node, React, a11y, UI and component testing and more.
+
 ## Ass 1
 
 - Static HTML/CSS for 4 tasks?

@@ -1,0 +1,164 @@
+body {
+    align-items: center;
+    background-color: #f0efee;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: top;
+    margin: 0;
+    /* padding: 10px 60px; */
+    text-align: center;
+
+}
+
+/* Main sections */
+.section {
+    height: 50%; /* assumed 50% but picture is not exactly half */
+    width: 100%;
+    position: fixed;
+    justify-content: center;
+    margin: 0;
+}
+
+.top {
+    align-items: flex-start;
+    background-color: white;
+    display: flex;
+    height: 48%;
+    margin: 0;
+    padding: 12px 4%;
+    width: 92%;
+    top: 0;
+}
+
+.bottom {
+    background-color: #daf0f3;
+    bottom: 0;
+    height: 52%;
+}
+/* Top components */
+.icon {
+    height: 160px;
+    width: 160px;
+}
+
+.infographic-text {
+    font-size: 1em;
+    font-weight: 800;
+}
+
+.infographic-div {
+    margin: 2px auto;
+    max-height: 215px;
+    max-width: 300px;
+}
+
+/* Bottom components */
+.card {
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.4em;
+    line-height: 1.1;
+    height: 154px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 0 45px;
+    width: 116px;
+}
+
+.card-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.grey-text {
+    color: #9ba4ab;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+/* Colours */
+.main-blue {
+    color: #53aec1;
+}
+
+.card-bg-blue {
+    background-color: #8cbcc3;
+}
+
+.card-bg-red {
+    background-color: #d93831;
+}
+
+/* Viewports */
+
+@media screen and (max-width: 900px) {
+    .card {
+        display: flex;
+        overflow: auto;
+        font-size: 3em;
+        width: 70%;
+        height: 260px;
+    }
+
+     .card-container {
+        flex-direction: column;
+        overflow: auto;
+    }
+    .top{
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }
+
+    .grey-text {
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 3.5em;
+        font-weight: bolder;
+    }
+
+    .icon {
+        width: 280px;
+        height: 280px;
+    }
+
+    .infographic-div {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%; */
+        margin-top: 5%;
+        margin-bottom: 23%;
+        width: 500px;
+        height: 500px;
+    }
+
+    .infographic-text {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+}
+
+/* align-items: center; */
+        /* max-width: 420px; */
+        /* max-height: 367px; */
+        /* width: 100%; */
+
+/* @media screen and (max-width: 600px) {
+    .top {
+        height: 100%;
+    }
+} */

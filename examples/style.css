@@ -1,0 +1,45 @@
+body {
+    background-color: #f3f3f3;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-heading {
+    font-size: 2.3em;
+    color: #921176;
+    font-weight: 6-0;
+    margin-bottom: 70px;
+}
+
+.card-heading {
+    color: #921176;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.card-description {
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 0 15px;
+    padding-bottom: 15px;
+}
+
+.container {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    width: 368px;
+    height: 485px;
+    margin: 0 auto;
+}
+
+.image {
+    height: 328px;
+}

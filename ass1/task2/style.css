@@ -1,0 +1,130 @@
+body {
+    background-color: #f0efee;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: top;
+    padding: 10px 60px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+.line {
+    background-color: black;
+    border: 0;
+    color: black;
+    font-size: 0;
+    height: 3px;
+    margin-left: 0;
+    text-align: left;
+    width: 33px;
+}
+
+.main-heading {
+    font-size: 1.78em;
+    font-weight: 400;
+    text-align: left;
+}
+
+/* Button components */
+.arrow {
+    fill: white;
+}
+
+.arrow-wrapper {
+    margin-left: 8px;
+}
+
+.btn {
+    align-items: center;
+    background-color: #008228;
+    color: white;
+    display: flex;
+    font-size: 1.15em;
+    height: 40px;
+    justify-content: center;
+    margin: 55px auto 30px;
+    width: 202px;
+}
+
+.btn:hover {background-color: black;}
+
+.btn:hover .arrow-wrapper {
+    margin-right: -4px;
+    margin-left: 12px;
+}
+
+/* Card components */
+.card {
+    background-color: white;
+    height: 418px;
+    margin: 0 auto;
+    border-radius: 4px;
+    width: 358px;
+}
+
+.card-body-div {
+    padding: 0 35px;
+}
+
+.card-heading {
+    color: #008228;
+    display: inline;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.card-heading-div {
+    align-items: center;
+    box-shadow: 0px 10px 12px -10px rgb(190, 190, 190);
+    display: flex;
+    height: 68px;
+    justify-content: left;
+}
+
+.card-icon {
+    fill: #008228;
+    display: inline;
+    height: 24px;
+    width: 24px;
+}
+
+#wallet {
+    height: 20px;
+    margin: 2px; /* To align the card-heading-div with the others */
+}
+
+.card-icon-wrapper {
+    display: inline;
+    height: 24px;
+    margin: 0 20px;
+}
+
+.card-large-text {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.card-medium-text {
+    margin-bottom: -5px;
+    margin-top: 22px;
+}
+
+.card-medium-text > span {
+    vertical-align: top;
+    font-size: 22pt;
+    height: 30px;
+    margin-top: 0;
+}
+
+.card-small-text {
+    font-size: 0.7em;
+    line-height: 1.5em;
+    color: #8b8f8f;
+}

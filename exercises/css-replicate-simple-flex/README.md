@@ -4,4 +4,4 @@ In `flex.html` use `div` tags with `flex` properties to create a page that vague
 
 Challenge: How easily can you rotate the entire box by 90 degrees?
 
-![](./images/spec.PNG)
+![](./spec.PNG)

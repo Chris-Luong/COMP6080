@@ -1,8 +1,139 @@
 <html>
+  <head>
+    <title>Box</title>
+    <style type="text/css">
+      .main-container {
+        height: 500px;
+        width: 1000px;
+        display: flex;
+      }
+
+      .left-pane {
+        display: flex;
+        flex-direction: column;
+        flex: 4;
+      }
+
+      .bottom-pane {
+        display: flex;
+        flex: 3;
+      }
+
+      .box {
+        /* height: 100px;
+        width: 100px; */
+        border: 1px solid white;
+      }
+
+      .top-green,
+      .bottom-green {
+        background-color: darkcyan;
+      }
+
+      .bottom-green {
+        flex: 1;
+      }
+
+      .top-green {
+        flex: 1;
+      }
+
+      .red {
+        background-color: maroon;
+        flex: 1;
+      }
+
+      .yellow {
+        background-color: blanchedalmond;
+        flex: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-pane">
+        <div class="top-green box"></div>
+        <div class="bottom-pane">
+          <div class="yellow box"></div>
+          <div class="bottom-green box"></div>
+        </div>
+      </div>
+      <div class="red box"></div>
+    </div>
+  </body>
+</html>
+
+<!-- Below was not working for some reason -->
+<!-- <html>
+  <head>
+    <title>Box</title>
+    <style type="text/css">
+      .main-container {
+        display: flex;
+        /* height: 500px;
+        width: 1000px; */
+      }
+
+      .left-plane {
+        display: flex;
+        /* flex: 4;
+        flex-direction: column; */
+      }
+
+      .bottom-plane {
+        display: flex;
+        /* flex: 3; */
+      }
+
+      .box {
+        height: 100px;
+        width: 100px;
+        border: 1px solid white;
+      }
+
+      .red {
+        /* flex: 1; */
+        background-color: maroon;
+      }
+
+      .bottom-green,
+      .top-green {
+        background-color: darkcyan;
+      }
+
+      /* .top-green {
+        flex: 1;
+      }
+
+      .bottom-green {
+        flex: 1;
+      } */
+
+      .yellow {
+        /* flex: 2; */
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-pane">
+        <div class="top-green box"></div>
+        <div class="bottom-pane">
+          <div class="yellow box"></div>
+          <div class="bottom-green box"></div>
+        </div>
+      </div>
+      <div class="red box"></div>
+    </div>
+  </body>
+</html> -->
+
+<!-- <html>
 <head>
 	<title>Box</title>
 </head>
 <body>
 	<div></div>
 </body>
-</html>
+</html> -->

@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+section {
+  margin: 0 5px;
+}
+
+.card {
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  /* Without this, the offset card is still to the right of the screen
+  because css does not account for margin and padding when calculating width */
+  box-sizing: border-box;
+}
+
+#offset-card {
+  position: relative;
+  left: 15px;
+  bottom: 30px;
+  /* Change the width of the card so it fits in the viewport
+  since it has been offset to the right so the card needs to be smaller */
+  width: calc(100% - 15px);
+}
+
+.card-footer {
+  text-align: right;
+}

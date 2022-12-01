@@ -3,7 +3,13 @@ body {
   /* margin: 0;
   padding: 0;
   box-sizing: border-box; */
-  min-width: fit-content;
+  /* Below was for the set widths when body was not taking up the full screen
+  and shrinking content. See below links:
+  https://stackoverflow.com/questions/21389073/why-isnt-body-expanding-to-fit-its-contents
+  https://developer.mozilla.org/en-US/docs/Web/CSS/min-width
+  https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content
+   */
+  /* min-width: fit-content; */
 }
 
 .row {

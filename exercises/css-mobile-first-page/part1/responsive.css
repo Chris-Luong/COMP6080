@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  min-width: fit-content;
+}
+
+.row {
+  display: grid;
+}
+
+.row1 {
+  /* width: 24vw; */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.row2 {
+  /* width: 33vw; */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row3 {
+  /* width: 49vw; */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+img {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: none;
+  }
+}

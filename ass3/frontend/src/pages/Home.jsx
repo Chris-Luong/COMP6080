@@ -1,15 +1,10 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-// import { apiCall } from '../Util/Helper';
 
 import Box from '@mui/material/Box';
+import Listings from '../components/Listings';
 
-export default function Home () {
-  // const [listings, setListings] = React.useState([]);
-  // const fetchListings = async () => {
-  //   const data = await apiCall('/listings', 'GET', null, null);
-  //   setListings(data.listings);
-  // };
-  // fetchListings();
+export default function Home (props) {
   return (
     <>
       <Box
@@ -20,13 +15,14 @@ export default function Home () {
           alignItems: 'center',
         }}
       >
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-        {/* {listings} */}
+        <h2>Welcome to the Airbrb!</h2>
+        <Listings token={props.token} user={props.user}/>
       </Box>
-      {/* <nav>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav> */}
     </>
   );
+}
+
+Home.propTypes = {
+  token: PropTypes.string,
+  user: PropTypes.string,
 }

@@ -1,28 +1,34 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import ListingNew from './ListingNew';
+import Listings from '../components/Listings';
 
-import Box from '@mui/material/Box';
+import Btn from '../components/Btn';
+import { useNavigate } from 'react-router-dom';
+import { Container } from '@mui/material';
+import MainHeading from '../components/MainHeading';
 
-export default function Dashboard () {
+export default function Dashboard (props) {
+  const navigate = useNavigate();
   return (
-    <>
-      <Box
-        sx={{
-          marginTop: 6,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <h2>Your listings</h2>
-        <p>
-          That feels like an existential question, dont you
-          think?
-        </p>
-        <br />
-        {/* Token: {token} */}
-        <ListingNew />
-      </Box>
-    </>
+    <Container
+      maxWidth="xl"
+      sx={{
+        marginTop: 6,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <MainHeading>
+        Your listings
+      </MainHeading>
+      <Btn onClick={() => navigate('/listing/new')}>Create new listing</Btn>
+      <Listings token={props.token} user={props.user}/>
+    </Container>
   );
 }
+
+Dashboard.propTypes = {
+  token: PropTypes.string,
+  user: PropTypes.string,
+};

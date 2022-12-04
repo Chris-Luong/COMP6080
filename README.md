@@ -105,4 +105,11 @@ function {
 ### **_ASYNC js-ajax-recusive-fetch_**
 
 - Solution shows how to use Promise.all with map() instead of calling fetch in a for loop
+- Also shows how to break up code using a new Promise for the Promise.all version
 - Recursive fetch is shown in ASYNC async-nested-promises
+
+### **_REACT fullstack-interaction _**
+
+- Shows how to use setTimeout and clearTimeout
+- Splits string by commas, removes spaces
+- Uses useEffect, useState and promise.allSettled for fetches

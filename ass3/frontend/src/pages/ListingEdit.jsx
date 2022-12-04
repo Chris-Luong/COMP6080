@@ -13,13 +13,14 @@ import AddHomeIcon from '@mui/icons-material/AddHome';
 // import { Avatar, Box, Container, Typography } from '@mui/material';
 // import FormField from '../components/FormField';
 
-const ListingNew = (props) => {
+const ListingEdit = (props) => {
   const [newListingTitle, setNewListingTitle] = React.useState('');
   const [bedrooms, setBedrooms] = React.useState([]);
   const navigate = useNavigate();
 
   const newListing = async (args) => {
-    const data = await apiCall('/listings/new', 'POST', { ...args }, props.token);
+    const data = await apiCall('/listings/' + props.listingId,
+      'POST', { ...args }, props.token);
     console.log('newListing data is ' + data);
     navigate('/dashboard');
   };
@@ -151,7 +152,7 @@ const ListingNew = (props) => {
             ],
             amenities: ['Air Conditioning', 'Kitchen'],
           },
-        })}>Create!</Btn>
+        })}>Save changes</Btn>
       </Container>
 
       <Container component="main" maxWidth="lg">
@@ -167,7 +168,7 @@ const ListingNew = (props) => {
             <AddHomeIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Create a new listing
+            Edit listing
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <FormField
@@ -354,7 +355,7 @@ const ListingNew = (props) => {
             </Typography>
             <FullFormBtn
             >
-              Create
+              Save changes
             </FullFormBtn>
             {/* <DefaultLink
               onClick={() => navigate('/login')}
@@ -368,9 +369,10 @@ const ListingNew = (props) => {
   );
 };
 
-export default ListingNew;
+export default ListingEdit;
 
-ListingNew.propTypes = {
+ListingEdit.propTypes = {
   token: PropTypes.string,
   user: PropTypes.string,
+  listingId: PropTypes.string,
 };

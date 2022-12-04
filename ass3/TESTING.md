@@ -12,7 +12,3 @@ Write a test for the "happy path" of a user that is described as:
 - Logs back into the application successfully
 
 (If working solo) include a short rationale of the testing you have undertaken within TESTING.md.
-
-<!-- TODO: Icons from Atlassian design -->
-
-Icons from Atlassian design: <https://atlassian.design/components/icon/icon-explorer>

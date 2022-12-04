@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { apiCall } from '../Util/Helper';
-import Login from './Login';
 import DefaultLink from '../components/DefaultLink';
 import FormField from '../components/FormField';
-
-import { useContext, Context } from '../context';
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -14,21 +11,20 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 import {
-  Routes,
-  Route,
   useNavigate,
 } from 'react-router-dom';
 import FullFormBtn from '../components/FullFormBtn';
 
 const isValidDetails = (email, name, password, passwordConfirm) => {
-  const regex = /^(.+)@(.+)$/;
+  // TODO: !! REDO EMAIL VALIDATION
+  // const regex = /^(.+)@(.+)$/;
 
   if (!email || !password || !name || !passwordConfirm) {
     alert('Please fill in all required fields');
     return false;
-  } else if (!email.match(regex)) {
-    alert('Please enter a valid email e.g. john@gmail.com');
-    return false;
+  // } else if (!email.match(regex)) {
+  //   alert('Please enter a valid email e.g. john@gmail.com');
+  //   return false;
   } else if (password !== passwordConfirm) {
     alert('Passwords do not match');
     return false;
@@ -38,13 +34,18 @@ const isValidDetails = (email, name, password, passwordConfirm) => {
 
 const Register = (props) => {
   const navigate = useNavigate();
-  const { setters } = useContext(Context);
 
   const registerBtn = async (email, password, name) => {
     const data = await
     apiCall('/user/auth/register', 'POST', { email, password, name }, null);
+    if (!data) {
+      return;
+    }
     console.log(data.token);
     props.setTokenFn(data.token);
+    localStorage.setItem('token', data.token);
+    props.setUserFn(email);
+    localStorage.setItem('user', email);
   };
 
   const handleSubmit = (event) => {
@@ -83,6 +84,7 @@ const Register = (props) => {
               required
               id="email"
               label="Email Address"
+              type="email"
               name="email"
               autoComplete="email"
               autoFocus
@@ -114,7 +116,7 @@ const Register = (props) => {
             <Typography
               variant="body2"
               color="error.main"
-              align="left" {...props}
+              align="left"
             >
               * Required
             </Typography>
@@ -129,13 +131,6 @@ const Register = (props) => {
             </DefaultLink>
           </Box>
         </Box>
-        <Routes>
-          <Route
-            path="/login"
-            element={<Login
-            setTokenFn={setters.setToken} />}
-          />
-      </Routes>
       </Container>
     </>
   );
@@ -145,4 +140,5 @@ export default Register;
 
 Register.propTypes = {
   setTokenFn: PropTypes.func,
+  setUserFn: PropTypes.func,
 };

@@ -17,3 +17,11 @@ export const apiCall = async (path, method, body, token) => {
     return data;
   }
 }
+
+export const getListingDetails = async (id) => {
+  const data = await apiCall('/listings/' + id, 'GET', null, null);
+  return data;
+}
+// Promise.resolve(apiCall('/listings/' + id, 'GET', null, null)).then((data) => {
+//   return data;
+// });

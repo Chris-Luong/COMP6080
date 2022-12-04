@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { apiCall } from '../Util/Helper';
-import Register from './Register';
 import DefaultLink from '../components/DefaultLink';
 import FormField from '../components/FormField';
-
-import { useContext, Context } from '../context';
 
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
@@ -14,21 +11,24 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
 import {
-  Routes,
-  Route,
   useNavigate,
 } from 'react-router-dom';
 import FullFormBtn from '../components/FullFormBtn';
 
 const Login = (props) => {
   const navigate = useNavigate();
-  const { setters } = useContext(Context);
 
   const loginBtn = async (email, password) => {
     const data = await
     apiCall('/user/auth/login', 'POST', { email, password }, null);
+    if (!data) {
+      return;
+    }
     console.log(data.token);
     props.setTokenFn(data.token);
+    localStorage.setItem('token', data.token);
+    props.setUserFn(email);
+    localStorage.setItem('user', email);
   };
 
   const handleSubmit = (event) => {
@@ -64,6 +64,7 @@ const Login = (props) => {
               required
               id="email"
               label="Email Address"
+              type="email"
               name="email"
               autoComplete="email"
               autoFocus
@@ -80,7 +81,6 @@ const Login = (props) => {
               variant="body2"
               color="error.main"
               align="left"
-              {...props}
             >
               * Required
             </Typography>
@@ -95,12 +95,6 @@ const Login = (props) => {
             </DefaultLink>
           </Box>
         </Box>
-        <Routes>
-          <Route
-            path="/register"
-            element={<Register setTokenFn={setters.setToken} />}
-          />
-      </Routes>
       </Container>
     </>
   );
@@ -110,4 +104,5 @@ export default Login;
 
 Login.propTypes = {
   setTokenFn: PropTypes.func,
+  setUserFn: PropTypes.func,
 };

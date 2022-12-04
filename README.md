@@ -108,8 +108,13 @@ function {
 - Also shows how to break up code using a new Promise for the Promise.all version
 - Recursive fetch is shown in ASYNC async-nested-promises
 
-### **_REACT fullstack-interaction _**
+### **_REACT fullstack-interaction_**
 
 - Shows how to use setTimeout and clearTimeout
 - Splits string by commas, removes spaces
 - Uses useEffect, useState and promise.allSettled for fetches
+
+### **_REACT router-example_**
+
+- shows how to use useLocation, useParams (from the url) and useNavigate
+  - useParams is probably useful since this was less used in assignment 3
